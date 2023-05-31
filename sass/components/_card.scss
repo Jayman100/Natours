@@ -75,7 +75,17 @@
           $color-secondary-light,
           $color-secondary-dark
         ),
-        url(../img/nat-5.jpg);
+        url(../img/nat-5-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 56.25em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+          ),
+          url(../img/nat-5.jpg);
+      }
     }
     &--2 {
       background-image: linear-gradient(
@@ -83,7 +93,17 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url(../img/nat-6.jpg);
+        url(../img/nat-6-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 56.25em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          ),
+          url(../img/nat-6.jpg);
+      }
     }
     &--3 {
       background-image: linear-gradient(
@@ -91,7 +111,17 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url(../img/nat-7.jpg);
+        url(../img/nat-7-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 56.25em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          ),
+          url(../img/nat-7.jpg);
+      }
     }
   }
 
@@ -179,5 +209,48 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: $shadow-1;
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    //FRONT SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }
